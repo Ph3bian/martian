@@ -1,0 +1,53 @@
+@import "../../styles/breakpoint";
+.Input {
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+  outline: none;
+  font-family: inherit;
+
+  @include md {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+  }
+  label {
+    font-size: 0.8em;
+    outline: none;
+    display: block;
+    outline: none;
+    @include md {
+      width: 9em;
+      height: 2em;
+    }
+  }
+  input {
+    height: 2.5em;
+    padding: 0.25em 0.6em;
+    border-radius: 5px;
+    border: 1px solid var(--light-grey);
+    font-size: 0.85em;
+    box-sizing: border-box;
+    width: 100%;
+    &:active,
+    &:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    
+  }
+  &Field {
+    [class="error"] {
+      border-color: var(--danger);
+    }
+  }
+  span {
+    color: var(--danger);
+    font-size: 0.65em;
+  }
+}
+::placeholder,
+::-webkit-input-placeholder {
+  color: #b9bcc9;
+  font-size: 0.9em;
+}

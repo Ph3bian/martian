@@ -1,0 +1,23 @@
+@import "../../styles/breakpoint";
+.ListItem {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.5em;
+  align-items: center;
+  border: 1px solid var(--light-grey);
+
+  @include md {
+    display: none;
+  }
+  &Arrow {
+    margin-left: auto;
+    width: 2.5em;
+    cursor: pointer;
+  }
+  &Description {
+    h2 {
+      font-size: 1.125em;
+    }
+  }
+}

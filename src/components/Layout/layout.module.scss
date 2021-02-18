@@ -1,0 +1,17 @@
+.Layout {
+  background: var(--white);
+  &Header {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 0.5em;
+    border-bottom: 1px solid #b9b9b9;
+    & > svg {
+      width: 2rem;
+      height: 2.25rem;
+    }
+  }
+  &Body {
+    padding: 2rem;
+  }
+}

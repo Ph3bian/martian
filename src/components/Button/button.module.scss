@@ -1,0 +1,28 @@
+Button {
+  width: 100%;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  touch-action: manipulation;
+  position: relative;
+  padding: 0.5em 0.5em;
+  line-height: 1.28rem;
+  color: var(--light);
+  border-radius: 5px;
+  height: 2.5em;
+  &:hover,
+  &:active {
+    color: var(--light);
+  }
+  &.neutral {
+    border: var(--light-grey) 1px solid;
+    background-color: transparent;
+    color: var(--grey);
+  }
+
+  &.primary {
+    border: var(--primary-color) 1px solid;
+    background-color: var(--primary-color);
+    color: var(--light);
+  }
+}

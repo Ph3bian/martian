@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500&display=swap');
+@import "./variables.css";
+@import "./breakpoint";
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Signika", sans-serif;
+  font-size: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button {
+  cursor: pointer;
+  font-family: "Signika", sans-serif;
+  &:focus,
+  &:visited,
+  &:active {
+    outline: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

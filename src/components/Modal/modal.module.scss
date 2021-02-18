@@ -1,0 +1,56 @@
+.Modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &[data-show="true"]{
+    animation: fadeIn ease .9s;
+  }
+  &Content {
+    background-color: var(--white);
+    height: 500px;
+    width: 600px;
+
+    %dflex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header {
+      @extend %dflex;
+      border-bottom: 1px solid var(--light-grey);
+      h3 {
+        margin: 0;
+      }
+    }
+    .body,
+    .header,
+    .footer {
+      padding: 1rem;
+    }
+    .body {
+      &Content {
+        min-height: 20rem;
+      }
+    }
+    .footer {
+      @extend %dflex;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
