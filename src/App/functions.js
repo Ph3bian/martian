@@ -3,7 +3,17 @@ export const fetchData = () => {
   return data;
 };
 
-export const currencyFormatter = (amount) =>
-  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" })
-    .format(amount)
-    .replace("€", "");
+export const isValid = (values) => {
+  let errors = {};
+  if (!values.budget) {
+    errors.budget = "Total budget is required ";
+  }
+  if (!/^[0-9]*(?:\.[0-9]{0,4})?$/i.test(values.budget)) {
+    errors.budget = "Enter valid amount";
+  }
+  if (Number(values.budget) < Number(values.budget_spent)) {
+    errors.budget = `Total budget must be greater than ${values.budget_spent}`;
+  }
+  console.log(errors, values);
+  return errors;
+};

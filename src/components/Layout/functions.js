@@ -1,13 +1,16 @@
-export const handleTheme = () => {
+export const handleTheme = (updateIcon) => {
+  const root = document.getElementById("root")
     if (
       localStorage.getItem("theme") &&
       localStorage.getItem("theme") === "dark"
     ) {
-      console.log("getting here");
-      document.documentElement.setAttribute("data-theme", "light");
+      
+      root.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
+      updateIcon("sun")
     } else {
+      updateIcon("moon")
       localStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
+      root.setAttribute("data-theme", "dark");
     }
   };

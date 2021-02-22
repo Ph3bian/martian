@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The <Modal/> component Should render button correctly 1`] = `
+exports[`The <Modal/> component Should render modal correctly 1`] = `
 <DocumentFragment>
   <div
     aria-describedby="modalDesc"
@@ -38,6 +38,7 @@ exports[`The <Modal/> component Should render button correctly 1`] = `
       </div>
       <div
         class="footer"
+        data-footer="true"
       >
         <button
           class="Button neutral"

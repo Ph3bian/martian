@@ -1,4 +1,4 @@
-import { currencyFormatter } from "./functions";
+import { currencyFormatter } from "utils/helper";
 export const data = [
   {
     id: 1,

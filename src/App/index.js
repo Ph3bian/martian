@@ -1,7 +1,7 @@
 import * as React from "react";
 import "styles/generic.scss";
 import { Layout, Table, ListItem } from "components";
-import Edit from "./edit";
+import Edit from "./editFormForm";
 import { fetchData } from "./functions";
 import { headers } from "./data";
 
@@ -11,8 +11,9 @@ function App() {
   const [currentItem, setCurrentItem] = React.useState({});
 
   const handleClick = (item) => {
-    setShown(!shown);
     setCurrentItem(item);
+    setShown(!shown);
+
   };
 
   React.useEffect(() => {

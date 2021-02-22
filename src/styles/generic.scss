@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap');
 @import "./variables.css";
 @import "./breakpoint";
 
 html {
   scroll-behavior: smooth;
-  font-family: "Signika", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 100%;
 }
 *,
@@ -14,10 +14,20 @@ html {
 }
 body {
   margin: 0;
+  .columnCentered{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    button{
+      margin-top: 1em;
+      width: 12em;
+    }
+  }
 }
 button {
   cursor: pointer;
-  font-family: "Signika", sans-serif;
+  font-family: "Barlow", sans-serif;
   &:focus,
   &:visited,
   &:active {

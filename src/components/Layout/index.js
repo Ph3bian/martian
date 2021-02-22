@@ -1,19 +1,30 @@
 import React, { useEffect } from "react";
-import { Logo } from "assets/svg";
 import styles from "./layout.module.scss";
-import {handleTheme} from "./functions"
+import { SunShineIcon, MoonIcon } from "assets/svg";
+import { handleTheme } from "./functions";
 
 const Layout = ({ children }) => {
+  const [icon, setIcon]= React.useState("moon")
   useEffect(() => {
     if (localStorage.getItem("theme")) {
-      document.documentElement.setAttribute("data-theme",  localStorage.getItem("theme"));
+      document.getElementById("root").setAttribute(
+        "data-theme",
+        localStorage.getItem("theme")
+      );
     }
   }, []);
+
   return (
     <div className={styles.Layout}>
       <div className={styles.LayoutHeader}>
-       Martian
-        <div onClick={handleTheme}> click</div>
+        Martian
+        <div onClick={()=>handleTheme(setIcon)}>
+          {icon === "moon" ? (
+            <SunShineIcon />
+          ) : (
+            <MoonIcon />
+          )}
+        </div>
       </div>
       <div className={styles.LayoutBody}>{children}</div>
     </div>

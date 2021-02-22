@@ -3,15 +3,13 @@
   margin-bottom: 0.5em;
   font-size: 1rem;
   outline: none;
-  font-family: "Signika", sans-serif;
+  font-family: "Barlow", sans-serif;
   label {
-    font-size: 0.8em;
-    outline: none;
+    font-size: 1em;
     display: block;
     outline: none;
     @include md {
-      width: 9em;
-      height: 2em;
+      margin-bottom: .67em;
     }
   }
   input {
@@ -22,6 +20,11 @@
     font-size: 0.85em;
     box-sizing: border-box;
     width: 100%;
+    font-family: inherit;
+    letter-spacing: 1px;
+    background-color: var(--white);
+    color: var(--text-color);
+    font-size: 1em;
     &:active,
     &:focus {
       border-color: var(--primary-color);

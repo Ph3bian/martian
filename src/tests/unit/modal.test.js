@@ -16,7 +16,7 @@ describe('The <Modal/> component', () => {
     loading:false,
   };
 
-  test('Should render button correctly', () => {
+  test('Should render modal correctly', () => {
     const { asFragment } = render(<Modal {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
