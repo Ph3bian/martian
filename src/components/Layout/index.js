@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./layout.module.scss";
 import { SunShineIcon, MoonIcon } from "assets/svg";
 import { handleTheme } from "./functions";
+import ErrorBoundary from "components/ErrorBoundary";
 
 const Layout = ({ children }) => {
   const [icon, setIcon]= React.useState("moon")
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
+    <ErrorBoundary>
     <div className={styles.Layout}>
       <div className={styles.LayoutHeader}>
         Martian
@@ -28,6 +30,7 @@ const Layout = ({ children }) => {
       </div>
       <div className={styles.LayoutBody}>{children}</div>
     </div>
+    </ErrorBoundary>
   );
 };
 export default Layout;

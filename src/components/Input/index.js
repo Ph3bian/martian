@@ -9,7 +9,7 @@ const Input = ({ label, error, ...rest }) => (
       <input {...rest} className={error && "error"} />
       {error && (
         <div>
-          <span className={styles.InputError}> {error}</span>
+          <span data-testid="input-error" className={styles.InputError}> {error}</span>
         </div>
       )}
     </div>

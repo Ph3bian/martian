@@ -12,6 +12,7 @@ const Modal = ({
   hasHeader = true,
   handleSubmit,
   loading,
+  formId
 }) => {
   const node = useRef(null);
 
@@ -68,10 +69,10 @@ const Modal = ({
             Close
           </Button>
           <Button
-            type="button"
+            type="submit"
             data-dismiss="modal"
+            form={formId}
             variant="primary"
-            onClick={handleSubmit}
             disabled={loading}
             name="submit"
           >

@@ -14,6 +14,5 @@ export const isValid = (values) => {
   if (Number(values.budget) < Number(values.budget_spent)) {
     errors.budget = `Total budget must be greater than ${values.budget_spent}`;
   }
-  console.log(errors, values);
   return errors;
 };

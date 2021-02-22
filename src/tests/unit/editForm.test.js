@@ -15,43 +15,61 @@ describe("The <Edit/> component", () => {
     setShown: jest.fn(),
     shown: true,
   };
-  it("show the sended message", () => {
-    const onSubmit = jest.fn();
-    const { getByPlaceholderText, getByText } = render(<Form {...defaultProps}  />);
-    const inputValue = "12";
+  it("Should display error if value is invalid", () => {
+    const { getByPlaceholderText, getByText,getByTestId } = render(
+      <Form {...defaultProps} />
+    );
+    const inputValue = "hello";
+    const form = getByTestId("edit-budget");
 
-    fireEvent.change( getByPlaceholderText(/budget/i), {
+    fireEvent.change(getByPlaceholderText(/budget/i), {
       target: { value: inputValue },
     });
-    fireEvent.click(getByText(/submit/i));
-
-    expect(onSubmit).toBeCalled();
+    fireEvent.submit(form);
+    expect(getByTestId("input-error")).toBeInTheDocument();
+    expect(getByText(`Enter valid amount`)).toBeInTheDocument();
   });
 
-  //   const defaultProps = {
-  //     type: "text",
-  //     onChange: jest.fn(),
-  //     label: "First Name",
-  //     placeholder: "Enter first name",
-  //     name: "firstName",
-  //   };
+  it("Should display error if value is less than budget_spent", () => {
+    const { getByPlaceholderText,getByText,  getByTestId } = render(
+      <Form {...defaultProps} />
+    );
+    const inputValue = "12";
+    const form = getByTestId("edit-budget");
 
-  //   test("Should render input correctly", () => {
-  //     const { asFragment } = render(<Input {...defaultProps} />);
-  //     expect(asFragment()).toMatchSnapshot();
-  //   });
+    fireEvent.change(getByPlaceholderText(/budget/i), {
+      target: { value: inputValue },
+    });
+    fireEvent.submit(form);
+    expect(getByTestId("input-error")).toBeInTheDocument();
+    expect(getByText(`Total budget must be greater than ${defaultProps.data.budget_spent}`)).toBeInTheDocument();
+  
+  });
+  it("Should display confirmation on success", () => {
+    const { getByPlaceholderText,getByText,  getByTestId } = render(
+      <Form {...defaultProps} />
+    );
+    const inputValue = "990002";
+    const form = getByTestId("edit-budget");
 
-  //   test("Should render input label correctly", () => {
-  //     const { getByText } = render(<Input {...defaultProps} />);
-  //     expect(getByText(/First Name/)).toBeInTheDocument();
-  //   });
+    fireEvent.change(getByPlaceholderText(/budget/i), {
+      target: { value: inputValue },
+    });
+    fireEvent.submit(form);
+    expect(getByText(`Budget updated to`)).toBeInTheDocument();
+  });
+  it("Should close modal on click of success button", () => {
+    const { getByPlaceholderText,getByText,  getByTestId } = render(
+      <Form {...defaultProps} />
+    );
+    const inputValue = "919000.4400";
+    const form = getByTestId("edit-budget");
 
-  //   test("Should call the onChange handler when it is provided", () => {
-  //     const { getByPlaceholderText } = render(<Input {...defaultProps} />);
-  //     const defaultField = getByPlaceholderText(defaultProps.placeholder);
-  //     const inputValue = "Anwuli";
-
-  //     fireEvent.change(defaultField, { target: { value: inputValue } });
-  //     expect(defaultField.value).toBe(inputValue);
-  //   });
+    fireEvent.change(getByPlaceholderText(/budget/i), {
+      target: { value: inputValue },
+    });
+    fireEvent.submit(form);
+    fireEvent.click(getByText(/return to dashboard/i));
+    expect(defaultProps.setShown).toHaveBeenCalled()
+  });
 });

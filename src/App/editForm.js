@@ -28,12 +28,12 @@ const Edit = ({ data, setShown, shown }) => {
     <Modal
       title={data.name}
       shown={shown}
-      handleSubmit={handleSubmit}
       setShown={setShown}
       hasFooter={!isSuccess}
+      formId="edit-budget"
     >
       {!isSuccess ? (
-        <form>
+        <form onSubmit={handleSubmit} id="edit-budget" data-testid="edit-budget">
           <Input
             label="Budget (€)"
             value={budget}
