@@ -1,33 +1,6 @@
 import { currencyFormatter } from "utils/helper";
 export const data = [
-  {
-    id: 1,
-    name: "Martian Firma",
-    budget: "10000.0000",
-    budget_spent: "4500.0000",
-    date_of_first_purchase: "2119-07-07",
-  },
-  {
-    id: 2,
-    name: "Solar Firma",
-    budget: "1020.2200",
-    budget_spent: "451.3754",
-    date_of_first_purchase: "2120-01-14",
-  },
-  {
-    id: 3,
-    name: "Sophie Soma",
-    budget: "1500.0000",
-    budget_spent: "450.0000",
-    date_of_first_purchase: "2120-01-14",
-  },
-  {
-    id: 4,
-    name: "Tonia Jones",
-    budget: "1603.2200",
-    budget_spent: "451.3004",
-    date_of_first_purchase: "2120-01-14",
-  },
+
   {
     id: 5,
     name: "Temi Okpoma",
