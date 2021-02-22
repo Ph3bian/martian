@@ -3,13 +3,7 @@
   margin-bottom: 0.5em;
   font-size: 1rem;
   outline: none;
-  font-family: inherit;
-
-  @include md {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-  }
+  font-family: "Signika", sans-serif;
   label {
     font-size: 0.8em;
     outline: none;

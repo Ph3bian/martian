@@ -12,7 +12,7 @@
   }
   tbody {
     tr {
-      color:var(--text-color);
+   
       &:nth-of-type(odd) {
         border-top: 1px solid var(--light-grey);
         border-bottom: 1px solid var(--light-grey);
@@ -24,7 +24,7 @@
       td {
         font-size: 1rem;
         padding: 1rem 0.75rem;
-        color: var(--grey);
+        color:var(--text-color);
       }
     }
   }

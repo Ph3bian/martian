@@ -1,8 +1,10 @@
 import * as React from "react";
 import "styles/generic.scss";
-import { Layout, Table, ListItem, Modal } from "components";
+import { Layout, Table, ListItem } from "components";
+import Edit from "./edit";
 import { fetchData } from "./functions";
 import { headers } from "./data";
+
 function App() {
   const [data, setData] = React.useState([]);
   const [shown, setShown] = React.useState(false);
@@ -20,7 +22,7 @@ function App() {
     <Layout>
       <Table data={data} headers={headers} handleClick={handleClick} />
       <ListItem data={data} headers={headers} handleClick={handleClick} />
-      {shown && <Modal data={currentItem} shown={shown} setShown={setShown} />}
+      {shown && <Edit data={currentItem} setShown={setShown} shown={shown} />}
     </Layout>
   );
 }

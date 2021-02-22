@@ -5,7 +5,7 @@ import Button from "../Button";
 
 const Modal = ({
   children,
-  data,
+  title,
   setShown,
   shown,
   hasFooter,
@@ -13,7 +13,7 @@ const Modal = ({
   handleSubmit,
   loading,
 }) => {
-  console.log(data, "modal")
+
   const node = useRef(null);
 
   const handleHide = useCallback(
@@ -46,12 +46,13 @@ const Modal = ({
   }, [handleClick, handleHide]);
 
   return (
-    <div role="dialog" className={styles.Modal} data-show={shown}>
+    <div tabIndex="-1" role="dialog" className={styles.Modal}  aria-labelledby="modalTitle" aria-describedby="modalDesc" data-show={shown}>
       <div className={styles.ModalContent}  ref={node}>
         {hasHeader && (
           <div className={styles.header}>
-            <h3>{data.name}</h3>
+            <h3 id="modalTitle">{title}</h3>
             <CloseIcon
+             aria-label="Close"
               role="button"
               onKeyDown={() => setShown(!shown)}
               onClick={() => setShown(!shown)}
@@ -59,7 +60,7 @@ const Modal = ({
           </div>
         )}
         <div className={styles.body}>
-          <div className={styles.bodyContent}>{children}</div>
+          <div className={styles.bodyContent} id="modalDesc">{children}</div>
         </div>
         {hasFooter && (
           <div className={styles.footer}>

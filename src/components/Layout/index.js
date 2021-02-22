@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.Layout}>
       <div className={styles.LayoutHeader}>
-        <Logo />
+       Martian
         <div onClick={handleTheme}> click</div>
       </div>
       <div className={styles.LayoutBody}>{children}</div>

@@ -8,16 +8,16 @@ const Table = ({ data = [], headers = [], handleClick }) => {
     <table className={styles.Table}>
       <thead>
         <tr>
-          {headers.map(({ name, title }) => (
-            <th key={name}>{title}</th>
+          {headers.map(({ name, title }, id) => (
+            <th key={`${name}-${id}`}>{title}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {data.map((item) => (
-          <tr onClick={()=>handleRowClick(item)}>
-            {headers.map((header) => (
-              <td>
+        {data.map((item, id) => (
+          <tr onClick={() => handleRowClick(item)} key={id}>
+            {headers.map((header, id) => (
+              <td key={`${header.name}-${id}`}>
                 {header.formatter ? header.formatter(item) : item[header.name]}
               </td>
             ))}

@@ -4,8 +4,8 @@ const ListItem = ({ handleClick, data }) => {
   return (
     <Fragment>
       {data &&
-        data.map((item) => (
-          <div className={styles.ListItem}>
+        data.map((item, id) => (
+          <div className={styles.ListItem} key={`${item.name}_${item.budget_spent-id}`}>
             <div className={styles.ListItemDescription}>
               <h2>{item.name}</h2>
               <p>{item.budget}</p>

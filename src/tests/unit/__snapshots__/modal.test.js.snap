@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <Modal/> component Should render button correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-describedby="modalDesc"
+    aria-labelledby="modalTitle"
+    class="Modal"
+    data-show="true"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="ModalContent"
+    >
+      <div
+        class="header"
+      >
+        <h3
+          id="modalTitle"
+        >
+          Test Modal
+        </h3>
+        <svg
+          aria-label="Close"
+          role="button"
+        >
+          close-icon.svg
+        </svg>
+      </div>
+      <div
+        class="body"
+      >
+        <div
+          class="bodyContent"
+          id="modalDesc"
+        />
+      </div>
+      <div
+        class="footer"
+      >
+        <button
+          class="Button neutral"
+          type="button"
+        >
+          Close
+        </button>
+        <button
+          class="Button primary"
+          data-dismiss="modal"
+          name="submit"
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

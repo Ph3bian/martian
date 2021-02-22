@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export const data =[
+import { currencyFormatter } from "./functions";
+export const data = [
   {
     id: 1,
     name: "Martian Firma",
@@ -10,43 +10,43 @@ export const data =[
   {
     id: 2,
     name: "Solar Firma",
-    budget: "1123.2200",
+    budget: "1020.2200",
     budget_spent: "451.3754",
     date_of_first_purchase: "2120-01-14",
   },
   {
     id: 3,
     name: "Sophie Soma",
-    budget: "1123.2200",
-    budget_spent: "451.3754",
+    budget: "1500.0000",
+    budget_spent: "450.0000",
     date_of_first_purchase: "2120-01-14",
   },
   {
     id: 4,
     name: "Tonia Jones",
-    budget: "1123.2200",
-    budget_spent: "451.3754",
+    budget: "1603.2200",
+    budget_spent: "451.3004",
     date_of_first_purchase: "2120-01-14",
   },
   {
     id: 5,
     name: "Temi Okpoma",
-    budget: "1123.2200",
-    budget_spent: "451.3754",
+    budget: "1623.2200",
+    budget_spent: "491.3754",
     date_of_first_purchase: "2120-01-14",
   },
   {
     id: 6,
     name: "Solomon Okoro",
-    budget: "1123.2200",
-    budget_spent: "451.3754",
+    budget: "1723.2200",
+    budget_spent: "751.1114",
     date_of_first_purchase: "2120-01-14",
   },
   {
     id: 7,
     name: "Uvere Okoro",
-    budget: "1123.2200",
-    budget_spent: "451.3754",
+    budget: "1003.2200",
+    budget_spent: "900.0054",
     date_of_first_purchase: "2120-01-14",
   },
   {
@@ -144,18 +144,24 @@ export const data =[
     date_of_first_purchase: "2120-01-14",
   },
 ];
+
 export const headers = [
-  { name: "name" , title: "Company"},
+  { name: "name", title: "Company" },
   {
-    name: "budget", title:"Budget",
+    name: "budget",
+    title: "Budget (€)",
+    formatter: ({ budget }) => currencyFormatter(budget),
   },
   {
-    name: "budget_spent", title:"Budget Spent",
+    name: "budget_spent",
+    title: "Budget Spent (€)",
+    formatter: ({ budget_spent }) => currencyFormatter(budget_spent),
   },
   {
     name: "budget_left",
-    title:"Budget Left",
-    formatter: ({ budget_spent, budget }) => budget - budget_spent,
+    title: "Budget Left (€)",
+    formatter: ({ budget_spent, budget }) =>
+      currencyFormatter(budget - budget_spent),
   },
-  { name: "date_of_first_purchase", title: "Date of First Pruchase" },
+  { name: "date_of_first_purchase", title: "Date of First Purchase" },
 ];
