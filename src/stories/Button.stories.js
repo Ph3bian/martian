@@ -11,16 +11,16 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
-  text: "Button",
+  text: "Submit",
   type: "button",
   onClick:()=>alert("You clicked me")
 };
  
-export const NeutralButton = () => (
-  <Button
-    onClick={() => alert("You clicked neutral button me")}
-    variant="neutral"
-    text="Button"
-    type="button"
-  />
-);
+export const  Neutral = Template.bind({});
+ Neutral.args = {
+    variant: "neutral",
+    text: "Button",
+    type: "button",
+    onClick:()=>alert("You clicked me")
+  };
+

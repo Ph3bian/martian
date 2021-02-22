@@ -50,7 +50,7 @@ exports[`The <Modal/> component Should render modal correctly 1`] = `
           class="Button primary"
           data-dismiss="modal"
           name="submit"
-          type="button"
+          type="submit"
         >
           Submit
         </button>
