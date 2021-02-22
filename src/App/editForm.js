@@ -7,8 +7,9 @@ import { CheckIcon } from "assets/svg";
 const Edit = ({ data, setShown, shown }) => {
   const [budget, setBudget] = useState(data.budget);
   const [isSuccess, setIsSuccess] = useState(false);
-  // const [showFooter, setShowFooter] = useState(true);
   const [errors, setErrors]=useState({})
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = isValid({...data, budget});
@@ -16,13 +17,13 @@ const Edit = ({ data, setShown, shown }) => {
     if (Object.keys(errors).length > 0) {
       return;
     }
+
     const isCompany = (company) => company.id === data.id;
     const companyID = companyData.findIndex(isCompany);
     companyData[companyID].budget = budget;
     setIsSuccess(true);
-    // setShowFooter(false)
- 
   };
+
   return (
     <Modal
       title={data.name}
@@ -36,6 +37,7 @@ const Edit = ({ data, setShown, shown }) => {
           <Input
             label="Budget (€)"
             value={budget}
+            placeholder="budget"
             error={errors.budget}
             onChange={(e) => setBudget(e.target.value)}
           />

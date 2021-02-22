@@ -19,10 +19,14 @@
   &Content {
     background-color: var(--white);
     height: 18.5em;
-    width: 23em;
+    width: 100%;
+    margin: 0 1em;
     border-radius: 5px;
     color: var(--text-color);
-    
+    @include md{
+      margin: 0;
+      width: 23em;
+    }
     %dflex {
       display: flex;
       justify-content: space-between;

@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronRightIcon } from "assets/svg";
+import {currencyFormatter} from "utils/helper"
 import styles from "./listItem.module.scss";
 const ListItem = ({ handleClick, data }) => {
   return (
@@ -13,8 +14,8 @@ const ListItem = ({ handleClick, data }) => {
           >
             <div className={styles.ListItemDescription}>
               <h2>{item.name}</h2>
-              <p>{item.budget}</p>
-              <span>{item.budget_spent}</span>
+              <p>Budget: <strong>{currencyFormatter(item.budget)}</strong></p>
+              <span>Budget Spent: <strong>{currencyFormatter(item.budget_spent)}</strong></span>
             </div>
             <div className={styles.ListItemArrow}>
               <ChevronRightIcon />
