@@ -15,7 +15,8 @@ const ListItem = ({ handleClick, data }) => {
             <div className={styles.ListItemDescription}>
               <h2>{item.name}</h2>
               <p>Budget: <strong>{currencyFormatter(item.budget)}</strong></p>
-              <span>Budget Spent: <strong>{currencyFormatter(item.budget_spent)}</strong></span>
+              <p>Budget Spent: <strong>{currencyFormatter(item.budget_spent)}</strong></p>
+              <p>Budget Left: <strong>{ currencyFormatter(item.budget - item.budget_spent)}</strong></p>
             </div>
             <div className={styles.ListItemArrow}>
               <ChevronRightIcon />
