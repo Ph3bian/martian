@@ -1,7 +1,7 @@
 import * as React from "react";
 import "styles/generic.scss";
 import { Layout, Table, ListItem } from "components";
-import Edit from "./editFormForm";
+import Edit from "./editForm";
 import { fetchData } from "./functions";
 import { headers } from "./data";
 

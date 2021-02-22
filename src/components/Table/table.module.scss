@@ -5,7 +5,7 @@
   border: 1px solid var(--light-grey);
   width: 100%;
   display: none;
-
+  font-size: 1rem;
   @include md {
     display: table;
     border-radius: 5px;
@@ -22,8 +22,8 @@
         cursor: pointer;
       }
       td {
-        font-size: 1rem;
-        padding: 1rem 0.75rem;
+        font-size: 1em;
+        padding: 1em 0.75em;
         color:var(--text-color);
       }
     }
@@ -33,13 +33,13 @@
       background: var(--light-purple);
       color:var(--text-color);
       th {
-        padding: 1rem 0.75rem;
+        padding: 1em 0.75em;
         text-align: left;
         vertical-align: bottom;
-        font-size: 0.75rem;
+        font-size: 0.75em;
         font-weight: normal;
         text-transform: uppercase;
-        font-size: 1.05rem;
+        font-size: 1.05em;
       }
     }
   }

@@ -1,27 +1,28 @@
 @import "../../styles/breakpoint";
 .Layout {
   background: var(--white);
+  font-size: 1rem;
   &Header {
     display: flex;
     align-items: center;
     background: var(--white);
 
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid var( --light-grey);
     justify-content: space-between;
     color: var(--text-color);
-    padding: 1rem;
+    padding: 1em;
     @include md {
-      padding: 1em 3rem;
+      padding: 1em 3em;
     }
     & > svg {
-      width: 2rem;
-      height: 2.25rem;
+      width: 2em;
+      height: 2.25em;
     }
   }
   &Body {
-    padding: 2rem 1rem;
+    padding: 2em 1em;
     @include md {
-      padding: 2rem 3rem;
+      padding: 2em 3em;
     }
   }
 }

@@ -12,13 +12,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
   &[data-show="true"] {
     animation: fadeIn ease 0.5s;
   }
   &Content {
     background-color: var(--white);
-    height: 18.5rem;
-    width: 23rem;
+    height: 18.5em;
+    width: 23em;
     border-radius: 5px;
     color: var(--text-color);
     
@@ -36,23 +37,23 @@
     }
     .body,
     .header {
-      padding: 1rem;
+      padding: 1em;
     }
    
     .body{
-      height: 11rem;
+      height: 11em;
     }
     .footer {
       &[data-footer="false"],[data-footer="false"] {
         display: none;
       }
       border-top: 1px solid var(--light-grey);
-      height: 4rem;
-      padding: 0 1rem;
+      height: 4em;
+      padding: 0 1em;
       @extend %dflex;
       & > button {
-        width: 7.5rem;
-        font-size: 0.8rem;
+        width: 7.5em;
+        font-size: .9em;
       }
     }
   }

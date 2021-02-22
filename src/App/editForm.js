@@ -7,7 +7,7 @@ import { CheckIcon } from "assets/svg";
 const Edit = ({ data, setShown, shown }) => {
   const [budget, setBudget] = useState(data.budget);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [showFooter, setShowFooter] = useState(true);
+  // const [showFooter, setShowFooter] = useState(true);
   const [errors, setErrors]=useState({})
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const Edit = ({ data, setShown, shown }) => {
     const companyID = companyData.findIndex(isCompany);
     companyData[companyID].budget = budget;
     setIsSuccess(true);
-    setShowFooter(false)
+    // setShowFooter(false)
  
   };
   return (
@@ -29,7 +29,7 @@ const Edit = ({ data, setShown, shown }) => {
       shown={shown}
       handleSubmit={handleSubmit}
       setShown={setShown}
-      hasFooter={showFooter}
+      hasFooter={!isSuccess}
     >
       {!isSuccess ? (
         <form>
